@@ -1,17 +1,18 @@
+# Node.js の公式イメージを使用
 FROM node:20
 
-# 作業ディレクトリを /app に統一（より安全）
+# 作業ディレクトリを設定
 WORKDIR /app
 
-# 依存関係ファイルをコピーしてインストール
-COPY package*.json ./
+# 依存ファイルを先にコピーして npm install
+COPY package.json package-lock.json* ./
 RUN npm install
 
-# 残りのファイルをすべてコピー（index.js含む）
+# 残りすべてのソースをコピー
 COPY . .
 
-# Cloud Run が期待するポート番号
+# ポートを指定（Cloud Run がこのPORTを使う）
 ENV PORT 8080
 
-# アプリケーションを起動
+# アプリを起動
 CMD ["node", "index.js"]
