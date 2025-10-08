@@ -4,6 +4,7 @@ import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../lib/firebase";
 import { useRouter } from "next/router";
+import Link from 'next/link';
 
 export default function LoginPage() {
   const router = useRouter();
