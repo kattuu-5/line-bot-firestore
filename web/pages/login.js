@@ -56,9 +56,9 @@ export default function LoginPage() {
 
       <p style={{ marginTop: '1rem', color: '#ccc', fontSize: '14px' }}>
   アカウントをお持ちでない方は{' '}
-  <a href="/register" style={{ color: '#ff5252', textDecoration: 'underline' }}>
+  <Link href="/register" style={{ color: '#ff5252', textDecoration: 'underline' }}>
     こちらから登録
-  </a>
+  </Link>
 </p>
 
     </div>
